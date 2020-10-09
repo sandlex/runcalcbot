@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class StatusController {
+public class WakeupController {
     
-    @GetMapping("/status")
+    @GetMapping("/wakeup")
     public String status() {
-        return "Running";
+        return "Ready to roll";
     }
 }
