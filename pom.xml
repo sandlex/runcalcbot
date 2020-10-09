@@ -69,8 +69,8 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>project.local</id>
-			<name>project</name>
+			<id>project-local</id>
+			<name>Local unmanaged libraries</name>
 			<url>file:${project.basedir}/repo</url>
 		</repository>
 	</repositories>

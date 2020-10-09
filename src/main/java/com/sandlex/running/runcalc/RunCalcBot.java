@@ -32,8 +32,7 @@ public class RunCalcBot extends TelegramLongPollingBot {
         String[] parts = s.split(";");
         String result;
         try {
-//            result = Calculator.getEstimation(parts[0], parts[1]);
-            result = "I'm here!";
+            result = Calculator.getEstimation(parts[0], parts[1]);
         } catch (Exception e) {
             result = e.getMessage();
         }
