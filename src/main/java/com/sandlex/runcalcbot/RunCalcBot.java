@@ -34,7 +34,7 @@ public class RunCalcBot extends TelegramLongPollingBot {
         String[] parts = s.trim().split(";");
         String result;
         if (parts.length != 2) {
-            result = "Send me a message in the format: paceBlock;schema. For example: T10=3:40,E=4:30,T5=3:30;3E + 5 * (1T10 + 0.4T5 + 00:30E) + 3E";
+            result = "Incorrect message. More info https://github.com/sandlex/runcalcbot";
         } else {
             try {
                 result = Calculator.getEstimation(parts[0], parts[1]).toString();
