@@ -1,6 +1,8 @@
-package com.sandlex.running.runcalc;
+package com.sandlex.runcalcbot;
 
-import com.sandlex.running.jd.Calculator;
+import com.sandlex.runcalc.Calculator;
+import com.sandlex.runcalc.InvalidPaceBlockException;
+import com.sandlex.runcalc.InvalidSchemaException;
 import lombok.extern.slf4j.Slf4j;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
@@ -32,8 +34,8 @@ public class RunCalcBot extends TelegramLongPollingBot {
         String[] parts = s.split(";");
         String result;
         try {
-            result = Calculator.getEstimation(parts[0], parts[1]);
-        } catch (Exception e) {
+            result = Calculator.getEstimation(parts[0], parts[1]).toString();
+        } catch (InvalidPaceBlockException | InvalidSchemaException e) {
             result = e.getMessage();
         }
         sendMessage.setText(result);

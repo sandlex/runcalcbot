@@ -1,31 +1,20 @@
-For those who uses Jack Daniels Running Formula book to create workouts. I've created a Telegram bot @RunCalcBot which estimates workout distance and time by workout schema.
+### Telegram bot for Running workout calculator
+Calculates estimated distance and completion time of pace based workouts.
 
-Supported pace constants: E, L, M, T, I, H, R, jg, rest
+Imagine you have to do a training according to the following schema:
+**15 minutes warming up, then 3 kilometers in 10 km pace, then 5 times of 400 meters in 5 km pace followed by 30 seconds rest, after 5 repetitions do 1.5 km in easy pace and then 1.5 hours in marathon pace.**
 
-Workout can be specified as:
-* template: L = lesser of 15 miles (24 km) & 100 min
-* flexible format, e.g.: 2E + 3 x 1T w/2 min rest + 3 x 3 min H w/2 min jg + 4 x 200 R w/200 jg + 1E. Numbers less than 100 are given in miles (2E, 1T, etc.), larger than 100 are given in meters (200R, 400 jg, etc.)
+To calculate this you send a message of the following format to the bot: `pace block;workout schema`
+For example: `WU=5:00,T10=3:40,E=4:30,T5=3:30,Rest=10:00,M=4:00;15:00WU + 3T10 + 1.5E + 5 * (0.4T5 + 00:30Rest) + 1.5E + 1:30:00M`
+Bot will do calculations and send results back to you: `Estimated distance - 33.750, time - 02:19:00`
 
-Bot expects a message in a form: pace_values;workout_schema
-
-For example: E=4:45,L=4:45,M=4:14,T=4:00,I=3:41,H=3:41,R=3:25,jg=5:00,rest=5:20;2E + 3T + 3 min rest + 2T + 2 min rest + 2 x 400R w/400 jg + 2 x 1T w/1 min rest + 1E + 4 x 200R w/200jg + 1E
-
-You need to supply only those constants which are used in the workout schema.
+Notes:
+* Pace name can't start with a number: T10 - ok, 10T - not ok
+* Nested repetitions are not supported
+* Time format - hh:mm:ss or mm:ss
+* If distance is given in miles then pace is assumed to be in min/mile. If distance is in kilometers then pace is in min/km
+* Mind the difference between imperial and metric systems when working with short intervals (fraction of kilometers/miles): 0.4 is 400 meters in metric system. In imperial system 0.4 will have a different meaning
 
 Because application is hosted on free hosting it periodically goes offline after 30 minutes of inactivity. Normally it should stay online from 7am till 12pm Amsterdam time zone. If you need it in off-work hours visit this link to wake it up: https://runcalc.herokuapp.com/wakeup. It may take around 15-20 second till app wakes up, shows "Ready to roll" message and send you your results.
 
-
-See calculation module: https://github.com/sandlex/jd
- 
-## Deployment steps
-Environment variables (Config Vars on Heroku):
-* BOT_NAME
-* BOT_TOKEN
-
-Install dependency to the project repository
-
-`mvn deploy:deploy-file -Durl=file:///Users/apeskov/Developer/runcalc/repo/ -Dfile=/Users/apeskov/Developer/jd/target/jd-1.0-SNAPSHOT.jar -DgroupId=com.sandlex.running -DartifactId=jd -Dpackaging=jar -Dversion=1.0-SNAPSHOT`
-
-Deploy bot
-
-`git push heroku master`
+See calculation module: https://github.com/sandlex/runcalc

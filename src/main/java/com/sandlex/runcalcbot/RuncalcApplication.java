@@ -1,4 +1,4 @@
-package com.sandlex.running.runcalc;
+package com.sandlex.runcalcbot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

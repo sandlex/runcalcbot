@@ -8,11 +8,11 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.sandlex.running</groupId>
-	<artifactId>runcalc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>runcalc</name>
-	<description>Demo project for Spring Boot</description>
+	<groupId>com.sandlex</groupId>
+	<artifactId>runcalcbot</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>runcalcbot</name>
+	<description>Runcalc Bot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -29,9 +29,9 @@
 			<version>3.5</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sandlex.running</groupId>
-			<artifactId>jd</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>com.sandlex</groupId>
+			<artifactId>runcalc</artifactId>
+			<version>2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
