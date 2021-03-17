@@ -31,12 +31,16 @@ public class RunCalcBot extends TelegramLongPollingBot {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId);
-        String[] parts = s.split(";");
+        String[] parts = s.trim().split(";");
         String result;
-        try {
-            result = Calculator.getEstimation(parts[0], parts[1]).toString();
-        } catch (InvalidPaceBlockException | InvalidSchemaException e) {
-            result = e.getMessage();
+        if (parts.length != 2) {
+            result = "Send me a message in the format: paceBlock;schema. For example: WU=5:00,T10=3:40,E=4:30,T5=3:30,Rest=10:00,M=4:00;15:00WU + 3T10 + 1.5E + 5 * (0.4T5 + 00:30Rest) + 1.5E + 1:30:00M";
+        } else {
+            try {
+                result = Calculator.getEstimation(parts[0], parts[1]).toString();
+            } catch (InvalidPaceBlockException | InvalidSchemaException e) {
+                result = e.getMessage();
+            }
         }
         sendMessage.setText(result);
         try {
