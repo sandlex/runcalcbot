@@ -8,7 +8,7 @@
 
 **You**: copy pasting and sending a message to the bot _WU=5:00,T10=3:40,E=4:30,T5=3:30,Rest=10:00,M=4:00;15:00WU + 3T10 + 1.5E + 5 * (0.4T5 + 00:30Rest) + 1.5E + 1:30:00M_
 
-**Bot**: replies _Estimated distance - 33.750, time - 02:19:00_
+**Bot**: _Estimated distance - 33.750, time - 02:19:00_
 
 **You**: honey, I'm going to be back in two and a half hours. It's gonna be almost 34 kilometers
 
@@ -21,6 +21,7 @@
 * write down your pace values as a pace block: _Easy=5:00,Tempo10k=3:35,Tempo5k=3:25,Rest=10:00_
 * write down your training schema: _15:00Easy + 3Tempo10k + 1.5Easy + 5 * (0.4Tempo5k + 00:30Rest) + 1:30:00Easy_
 * combine _pace block_ with _training schema_ using _;_ and send it as a message to the bot: _Easy=5:00,Tempo10k=3:35,Tempo5k=3:25,Rest=10:00;15:00Easy + 3Tempo10k + 1.5Easy + 5 * (0.4Tempo5k + 00:30Rest) + 1:30:00Easy_
+* bot replies you with estimated distance and duration of your workout
 
 ### Rules
 * pace name can be a single word and can't start with a number
