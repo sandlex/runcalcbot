@@ -44,7 +44,7 @@ public class RunCalcBot extends TelegramLongPollingBot {
         String paceBlock = null;
         String schema = null;
         if (parts.length != 2) {
-            result = "Incorrect message. More info https://github.com/sandlex/runcalcbot";
+            result = "Incorrect message. More info https://sandlex.github.io/runcalcbot";
         } else {
             try {
                 paceBlock = parts[0];
