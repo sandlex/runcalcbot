@@ -22,7 +22,7 @@
 * write down your training schema: _15:00Easy + 3Tempo10k + 1.5Easy + 5 * (0.4Tempo5k + 00:30Rest) + 1:30:00Easy_
 * combine _pace block_ with _training schema_ using _;_ and send it as a message to the bot: _Easy=5:00,Tempo10k=3:35,Tempo5k=3:25,Rest=10:00;15:00Easy + 3Tempo10k + 1.5Easy + 5 * (0.4Tempo5k + 00:30Rest) + 1:30:00Easy_
 
-####Rules
+### Rules
 * pace name can be a single word and can't start with a number
 * training schema can use only pace names listed in the pace block
 * training schema consists of multiple phases. Phases can be:
@@ -30,10 +30,10 @@
   * **distance based**: _3Tempo10k_ - 3 km/mile in 10 km pace, _0.4Tempo5k_ - 0.4 km/mile (400 meters) in 5 km pace
   * **repeated**: _5 * (0.4Tempo5k + 00:30Rest)_ - 5 repetitions of two phases inside the brackets. Nested repetitions are not supported
 
-###Limitations
+### Limitations
 * Application is hosted on a free hosting and to save costs goes offline from 00:00 till 07:00AM CET.
 * If you still want your results open [this link](https://runcalc.herokuapp.com/wakeup) and wait for 15-20 seconds till app wakes up, shows "Ready to roll" message and sends you your results.
 * Also let me know at [@sandlex](https://t.me/sandlex) if you want to use app when it is normally not available and I may adjust a schedule.
 
-###And more
+### And more
 If you don't like bots you can use calculation engine as a standalone Java application as described [here](https://github.com/sandlex/runcalc). 
